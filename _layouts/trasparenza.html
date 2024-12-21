@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
- <div class="container">
+<div class="container">
   <main>
     <section>
       <h2>Trasparenza</h2>
@@ -16,18 +16,18 @@ layout: default
           </tr>
         </thead>
         <tbody>
-          {% assign transparent_documents = site.pages | where: "trasparenza", "si" %}
+          {% assign transparent_documents = site.pages | where: "trasparenza", "si" | sort: "publish_date" | reverse %}
           {% for document in transparent_documents %}
           <tr>
             <th scope="row">{{ forloop.index }}</th>
             <td>{{ document.title }}</td>
             <td>{{ document.document_type }}</td>
             <td>{{ document.publish_date }}</td>
-            <td><a href="https://gjdev-org.github.io/servizionline/{{ document.file_link }}" target="_blank">Visualizza</a></td>
+            <td><a href="https://gjdev-org.github.io/trasparenza/{{ document.file_link }}" target="_blank">Visualizza</a></td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
     </section>
   </main>
- </div>
+</div>
